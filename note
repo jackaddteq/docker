@@ -10,3 +10,4 @@ docker system prune -a #additionally remove any stopped containers and all unuse
 docker images purge  # remove dangling image
 
 
+https://bitbucket.org/atlassian/atlassian-aws-deployment/src/master/templates/JiraDataCenter.template.yaml
