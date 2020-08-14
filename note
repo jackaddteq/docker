@@ -9,5 +9,11 @@ docker system prune -a #additionally remove any stopped containers and all unuse
 
 docker images purge  # remove dangling image
 
-
+Jira aws template
 https://bitbucket.org/atlassian/atlassian-aws-deployment/src/master/templates/JiraDataCenter.template.yaml
+
+# ssm-user -> root
+# SSM->Run Command -> Command document->AWS-RunShellScript->Command Parameters
+cd /etc/sudoers.d 
+echo "ssm-user ALL=(ALL) NOPASSWD:ALL" > ssm-agent-users
+
