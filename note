@@ -17,3 +17,19 @@ https://bitbucket.org/atlassian/atlassian-aws-deployment/src/master/templates/Ji
 cd /etc/sudoers.d 
 echo "ssm-user ALL=(ALL) NOPASSWD:ALL" > ssm-agent-users
 
+
+------ stackstorm  st2admin/Ch@ngeMe
+docker-compose up -d
+docker-compose down
+docker-compose exec st2client bash  
+docker-compose exec st2client st2 run core.echo message=hello
+st2 run core.echo message="from the inside"
+
+st2ctl reload --register-all
+st2 run tutorial.hello
+st2 run tutorial.hello name=Stanley
+st2ctl reload
+
+st2 run packs.setup_virtualenv packs=tutorial
+st2 run tutorial.echo_action message=working
+
