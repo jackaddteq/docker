@@ -18,6 +18,14 @@ cd /etc/sudoers.d
 echo "ssm-user ALL=(ALL) NOPASSWD:ALL" > ssm-agent-users
 
 
+----- copy file from/to docker
+docker cp foo.txt mycontainer:/foo.txt
+docker cp mycontainer:/foo.txt foo.txt
+
+docker cp src/. mycontainer:/target
+docker cp mycontainer:/src/. target
+
+
 ------ stackstorm  st2admin/Ch@ngeMe
 docker-compose up -d
 docker-compose down
