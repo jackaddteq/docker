@@ -42,3 +42,7 @@ st2 run packs.setup_virtualenv packs=tutorial
 st2 run tutorial.echo_action message=working
 
 st2 execution list
+
+------ requirement
+pip freeze
+pip install -r requirements.txt
