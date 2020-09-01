@@ -45,6 +45,20 @@ st2 execution list
 st2 pack list
 st2 action list
 
+# issue: git+ssh://git@stash.xxx.com:7999/cmut/dnsimple2.git
+# st2/st2-docker-master/packs.dev/dnsimple2  # git clone here
+# requirements.txt
+
+# git+file:/opt/stackstorm/packs.dev/dnsimple2
+st2 run packs.setup_virtualenv packs=addteq
+st2 run addteq.dns.add fqdn=xxx.aaa.net ip_address=10.10.10.1
+
+
+
+
+
+
+
 ------ requirement
 pip freeze
 pip install -r requirements.txt
