@@ -48,12 +48,12 @@ st2 action list
 # issue: git+ssh://git@stash.xxx.com:7999/cmut/dnsimple2.git
 # st2/st2-docker-master/packs.dev/dnsimple2  # git clone here
 # requirements.txt
-
 # git+file:/opt/stackstorm/packs.dev/dnsimple2
+
+st2ctl reload --register-all
 st2 run packs.setup_virtualenv packs=addteq
+st2 run addteq.dns.list domain=codefactori.net
 st2 run addteq.dns.add fqdn=xxx.aaa.net ip_address=10.10.10.1
-
-
 
 
 
