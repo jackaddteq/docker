@@ -52,7 +52,7 @@ st2 action list
 
 st2ctl reload --register-all
 st2 run packs.setup_virtualenv packs=addteq
-st2 run addteq.dns.list domain=codefactori.net
+st2 run addteq.dns.list domain=codefactori.net source_channel=abc
 st2 run addteq.dns.add fqdn=xxx.aaa.net ip_address=10.10.10.1
 
 
