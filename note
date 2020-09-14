@@ -50,6 +50,8 @@ st2 action list
 # requirements.txt
 # git+file:/opt/stackstorm/packs.dev/dnsimple2
 
+
+docker-compose exec stackstorm bash
 st2ctl reload --register-all
 st2 run packs.setup_virtualenv packs=addteq
 st2 run addteq.dns.list domain=codefactori.net source_channel=abc
