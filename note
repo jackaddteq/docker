@@ -27,6 +27,8 @@ docker cp mycontainer:/src/. target
 
 
 ------ stackstorm  st2admin/Ch@ngeMe
+python-script
+
 docker-compose up -d
 docker-compose down
 docker-compose exec st2client bash  
