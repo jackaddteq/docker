@@ -68,3 +68,12 @@ st2 run addteq.dns.add fqdn=xxx.aaa.net ip_address=10.10.10.1
 ------ requirement
 pip freeze
 pip install -r requirements.txt
+
+
+-----
+#install psql 
+sudo apt-get update
+sudo apt-get install postgresql-client
+
+
+
