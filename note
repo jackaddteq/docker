@@ -86,7 +86,18 @@ docker run -it -p 3000:3000 --name slackapp localhost:5000/slackapp
 docker exec -it bf8f25c72006 bash
 
 
+# Dockerfile
+FROM python:3.8-slim-buster
 
+ENV VIRTUAL_ENV=/opt/venv
+RUN python3 -m venv $VIRTUAL_ENV
+ENV PATH="$VIRTUAL_ENV/bin:$PATH"
 
+ADD . app
+WORKDIR app
+RUN pip install -r requirements.txt
+
+CMD ["python", "run.py"]
+                 
 
 
