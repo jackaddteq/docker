@@ -99,5 +99,7 @@ RUN pip install -r requirements.txt
 
 CMD ["python", "run.py"]
                  
+## tcpdump
+tcpdump -i eth0 -nn -A
 
 
