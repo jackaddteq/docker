@@ -17,6 +17,19 @@ https://bitbucket.org/atlassian/atlassian-aws-deployment/src/master/templates/Ji
 cd /etc/sudoers.d 
 echo "ssm-user ALL=(ALL) NOPASSWD:ALL" > ssm-agent-users
 
+-----
+docker run ubuntu cat /etc/os*release*
+docker run ubuntu sleep 100   #run in foreground
+docker run -d ubuntu sleep 1500  # run background
+
+docker attache {dockerid}  # attach a background docker container
+
+
+-----
+docker run jenkins
+docker inspect ddd{jenkins}  #look for ip address  172.17.0.4
+curl 172.17.0.4:8080
+docker run --name myjenkins -p 8080:8080 -p 50000:50000 -v /var/jenkins_home jenkins
 
 ----- copy file from/to docker
 docker cp foo.txt mycontainer:/foo.txt
