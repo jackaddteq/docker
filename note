@@ -25,9 +25,12 @@ docker run -d ubuntu sleep 1500  # run background
 docker attache {dockerid}  # attach a background docker container
 
 ---- docker network
-docker run ubuntu  # bridge network 172.17.x.x
+docker run ubuntu  # default bridge network 172.17.x.x
 docker run ubuntu --network=none
 docker run ubuntu --network=host  # will use host ip 
+
+docker network create --driver bridge subnet 182.18.0.0/16 mynetwork
+
 
 -----
 docker run jenkins
