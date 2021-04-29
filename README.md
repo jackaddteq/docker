@@ -29,10 +29,25 @@ docker system events
 2021-04-29T18:51:09.655520873-04:00 network disconnect c03a2c332d8952831f404ffce9ade6666b80dfa2d5a4e5b77e95592ae7ae1401 (container=01dfe8d8091366e7fbfada8259c90ef1efecef50598e33a5679f6b7370226835, name=bridge, type=bridge)
 
 ```
-- cadvisor 
+- [cadvisor](https://github.com/google/cadvisor) 
 ```
 docker run -d --name=cadvisor -p 8080:8080 --volume=/var/run:/var/run:rw --volume=/var/lib/docker:/var/lib/docker:ro google/cadvisor:latest
 http://localhost:8080
+
+VERSION=v0.36.0 # use the latest release version from https://github.com/google/cadvisor/releases
+sudo docker run \
+  --volume=/:/rootfs:ro \
+  --volume=/var/run:/var/run:ro \
+  --volume=/sys:/sys:ro \
+  --volume=/var/lib/docker/:/var/lib/docker:ro \
+  --volume=/dev/disk/:/dev/disk:ro \
+  --publish=8080:8080 \
+  --detach=true \
+  --name=cadvisor \
+  --privileged \
+  --device=/dev/kmsg \
+  gcr.io/cadvisor/cadvisor:$VERSION
+  
 ```
 - remove all docker container
 
